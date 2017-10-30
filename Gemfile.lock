@@ -4,6 +4,7 @@ GEM
     backports (3.10.3)
     multi_json (1.12.2)
     mustermann (1.0.1)
+    puma (3.10.0)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -25,8 +26,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  puma
   sinatra
   sinatra-contrib
+
+RUBY VERSION
+   ruby 2.4.2p198
 
 BUNDLED WITH
    1.15.4
