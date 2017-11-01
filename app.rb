@@ -26,3 +26,19 @@ get '/' do
     out.puts "streaming"
   end
 end
+
+get '/stream2', provides: 'text/event-stream' do
+  stream(:keep_open) do |out|
+    #Thread.new do
+    begin
+      10.times do |i|
+        sleep 1
+        puts "sending #{i}"
+        out << "data: #{i}\n\n"
+      end
+    rescue
+      puts $!.inspect
+    end
+    #end
+  end
+end
